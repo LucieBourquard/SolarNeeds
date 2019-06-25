@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html lang="fr-FR">
+    <head>
+        <title>SolarNeeds : vos consommations, notre priorité!</title>
+        <meta charset="UTF-8">
+        <link href="../CSS/style.css" rel="stylesheet" type="text/css">
+        <link href="../CSS/formulaire.css" rel="stylesheet" type="text/css">
+        <link href="../CSS/simulateur.css" rel="stylesheet" type="text/css">
+        <script src="../JS/simulateur.js" type="module"></script>
+        <link rel="icon" href="../solaricon.ico">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Lucie BOURQUARD">
+        <meta name="Accueil" content = "Evaluez vos besoins en énergie solaire grâce à notre simulateur puis contactez nous pour plus d'information.">
+    </head>
+    <body>
+        <header>
+            <picture>
+            <source srcset="../IMAGES/banniere.png">
+            <img src="../IMAGES/banniere.png" alt="SolarNeeds: vos consommations, notre priorité!
+                 Cette image montre des panneaux solaires illuminés par un soleil éclatant
+                 Devant des nuages blancs.">
+            </picture>
+            <nav>
+                <input type="checkbox">
+                <span></span>
+                <span></span>
+                <span></span>
+                <ul>
+                    <li><a href="../index.html">Accueil</a></li>
+                    <li><a href="simulateur.html">Simulateur de Consommation</a></li>
+                    <li><a href="nous-contacter.html">Nous Contacter</a></li>
+                </ul>
+            </nav>
+        </header>
+            <section id="formulaire">
+                <h1>Simulation de vos besoins</h1>
+                <form id="form_simulateur" name="form_simulateur">
+                    <fieldset id="recueilinfos">
+                        <legend>Vos informations : </legend>
+                        <p>
+                            <label for="num_appareils">Nombre d'appareils électroménagers :</label>
+                            <input type="range" name="num_appareils" id="num_appareils" min="0" max="50" value="0">
+                            <output for="num_appareils" id="o_num_appareils">0</output>
+                        </p>
+                        <p>
+                            <label for="num_panneau">Nombre de panneaux solaires possédés:</label> 
+                            <input type="number" name="num_panneau" id="num_panneau" min="0" max="999">
+                        </p>
+                        <p>
+                            <label for="num_ville">Ville : </label>
+                            <select name="num_ville" id="num_ville">
+                                <option value="129">Ajaccio</option>
+                                <option value="85">Clermont</option>
+                                <option value="117">Marseille</option>
+                                <option value="53">Paris</option>
+                                <option value="75">Strasbourg</option>
+                                <option value="93">Toulouse</option>
+                                <option value="365">Portugal (oui)</option>
+                            </select>
+                        </p>
+                    </fieldset>
+                    <p id="controles">
+                        <input type="reset" id="btn_annuler" value="Effectuer une nouvelle simulation">
+                    </p>
+                </form>
+            </section>    
+        <footer>© SolarNeeds 2019 : by BOURQUARD / AFONSO / BECK</footer>
+    </body>
+</html>

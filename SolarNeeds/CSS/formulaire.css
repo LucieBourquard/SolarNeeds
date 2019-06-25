@@ -1,0 +1,126 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 16 mai 2019, 11:55:07
+    Author     : lucie
+*/
+
+h1 {
+    margin-top: 35px;
+    margin-bottom: 16px;
+    font-size: xx-large;
+    color: cadetblue;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+#i_nom{
+    width: 284px;
+}
+
+#i_prenom{
+    width: 257px;
+}
+
+#i_email{
+    width: 271px;
+}
+
+legend{
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#coordo label{
+    margin-left: 5px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+
+#label_autre_motif {
+    margin-left: 20px;
+}
+
+#motif legend{
+    padding: 0 5px;
+    font-weight: bold;
+}
+
+form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 45px;
+    flex-wrap: wrap;
+}
+
+
+#motif_contact {
+    width: 453px;
+}
+
+#coordo{
+    width: 453px;
+}
+
+#motif_contact label, #motif_contact input {
+    margin-left: 10px;
+}
+
+#autre_motif{
+    width: 425px;
+    height: 150px;
+    text-align: start;
+    margin-left: 10px;
+}
+
+#controles {
+    margin-top: 10px;
+}
+
+#controles input{
+    padding:10px;
+}
+
+#controles input:first-child {
+    margin-right: 10px;
+}
+
+input:valid, :not(input[type="submit"]){ /* Sélection de n'importe quel element qui n'est pas un input type submit'*/
+    color: green;
+}
+
+input:invalid{
+    color: red;
+}
+
+#coordo div {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 10px;
+}
+
+#coordo div.input-validation {
+    margin:0;
+}
+
+input[type="text"]:valid ~ .input-validation::before, /* p span: tout les elements spans qui suivent un p*/
+input[type="email"]:valid ~ .input-validation::before {
+    content:   "✔"  ; 
+    margin-left: 5px;
+    color: green;
+}
+
+@media screen and (max-width:576px) {
+    
+#motif {
+        margin-top: 20px;
+    }
+
+}
+

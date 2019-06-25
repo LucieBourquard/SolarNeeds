@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html lang="fr-FR">
+    <head>
+        <title>SolarNeeds : vos consommations, notre priorité!</title>
+        <meta charset="UTF-8">
+        <link href="../CSS/style.css" rel="stylesheet" type="text/css">
+        <link href="../CSS/formulaire.css" rel="stylesheet" type="text/css">
+        <script src="../JS/nous-contacter.js"></script>
+        <link rel="icon" href="../solaricon.ico">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Lucie BOURQUARD">
+        <meta name="Accueil" content = "Evaluez vos besoins en énergie solaire grâce à notre simulateur puis contactez nous pour plus d'information.">
+    </head>
+    <body>
+        <header>
+            <picture>
+            <source srcset="../IMAGES/banniere.png">
+            <img src="../IMAGES/banniere.png" alt="SolarNeeds: vos consommations, notre priorité!
+                 Cette image montre des panneaux solaires illuminés par un soleil éclatant
+                 Devant des nuages blancs.">
+            </picture>
+            <nav>
+                <input type="checkbox">
+                <span></span>
+                <span></span>
+                <span></span>
+                <ul>
+                    <li><a href="../index.html">Accueil</a></li>
+                    <li><a href="simulateur.html">Simulateur de Consommation</a></li>
+                    <li><a href="nous-contacter.html">Nous Contacter</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section id="contact">
+            <h1>Nous contacter</h1>
+            <form name="form_contact" id="form_contact" method="POST">
+                <fieldset id="coordo">
+                    <legend>Pour mieux vous connaître</legend>
+                    <div>
+                        <label for="i_nom">Votre nom :</label>
+                        <input type="text" name="i_nom" id="i_nom" size="35" pattern="^[a-zA-Zéèêëç\s\-]+$" required>
+                        <div class="input-validation"></div>
+                    </div>
+                    <div>
+                        <label for="i_prenom">Votre prénom :</label>
+                        <input type="text" name="i_prenom" id="i_prenom" size="35" pattern="^[a-zA-Zéèêëç\s\-]+$" required>
+                        <div class="input-validation"></div>
+                    </div>
+                    <div>
+                        <label for="i_email">Votre e-mail :</label>
+                        <input type="email" name="i_email" id="i_email" pattern="https?://.+[a-z0-9.-]+\.[a-z]{2,}$" required>
+                        <div class="input-validation"></div>
+                    </div>
+                </fieldset>
+                <fieldset id="motif_contact">
+                    <legend>Motif du contact</legend>
+                    <div>
+                        <input type="radio"name="motif" value="Simuler votre consommation" required/>
+                        <label>Simuler votre consommation</label>
+                    </div>
+                     <div>
+                        <input type="radio" name="motif" value="Vous êtes un professionnel du photovoltaïque"/>
+                        <label>Vous êtes un professionnel du photovoltaïque</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="motif" value="autre"/>
+                        <label>Autre...</label>
+                    </div>
+                    <div>
+                        <label id="label_autre_motif" for="autre_motif">Si "Autre", veuillez préciser: </label>
+                    </div>
+                    <div>
+                        <textarea id="autre_motif" cols="40" rows="5"></textarea>
+                    </div>
+                </fieldset>
+                <div id="controles">
+                    <input type="button" id="btn_envoyer" name="sub_envoyer" value="Envoyer votre demande de contact">
+                    <input type="reset" name="rst_annuler" value="Effacer les réponses">
+                </div>
+            </form>
+        </section>  
+   
+        <footer>© SolarNeeds 2019 : by BOURQUARD / AFONSO / BECK</footer>
+    </body>
+</html>

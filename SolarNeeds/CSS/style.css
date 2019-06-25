@@ -1,0 +1,226 @@
+
+* {
+    font-family: 'Montserrat'; /* Police par défaut */
+    box-sizing: border-box; /* Les tailles de conteneurs incluent bordures 
+                               et remplissages */
+    margin: 0; /* Mise à 0 des marges externes */
+    padding: 0; /* Mise à 0 des marges internes */
+    text-decoration: none; /* Suppression de la mise en forme habituelle des liens
+                            (soulignement) */
+    
+}
+
+/* Définition de la police "Montserrat" */
+@font-face{
+    font-family: "Montserrat";
+    src: url('../POLICES/Montserrat-Regular.ttf') format("truetype");
+}
+
+/* Définition de la police "Nordic" */
+@font-face{
+    font-family: "Quarthin";
+    src: url('../POLICES/quarthin.ttf') format("truetype");
+}
+
+body {
+    display: flex; /* Ce contenu est "flexible" */
+    justify-content: center; /* Les éléments portés sont centrés à l'horizontal' */
+    flex-direction: column; /* Les éléments sont empilés */
+    align-items: center; /* Les éléments portés sont centrés à la verticale */
+    width: 100%; /* La page occupe toute la largeur */
+}
+
+header{
+    width: 972px; /*Les headers et sections occupent 916px*/
+    display: flex; 
+    flex-direction: column; /*Les éléments sont empilés*/
+    justify-content: center;
+}
+
+picture {display: flex;}
+
+nav input {display: none;}
+
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: black;
+}
+
+nav ul li{
+    display: flex;
+    justify-content: center;
+    list-style-type: none; /* Cette liste n'a pas de puce'*/
+    font-size: x-large; /* Le texte est grossi en xxl */
+    flex-grow: 1; /* L'espace occupé est élargi'*/
+}
+
+nav ul li a {
+    padding: 10px; /* Couleur du texte */
+    color: white;
+    font-family: 'Quarthin';
+    font-weight: bold;
+}
+
+nav ul li a:hover{
+    color: black;
+}
+nav ul li:hover{ /* PSEUDO CLASSE - survol de souris*/
+    background-color: lightsteelblue;
+}
+
+section {
+    width: 972px;
+}
+
+#principal {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row; /* Les éléments sont mis côte à côte*/
+    text-align: justify;
+}
+
+#principal article {
+    flex: 1; /* Ecriture raccourcie : 
+             flex-grow=1 et flex-shrink=1
+            --> chaque element occupe l'espace ideal*/
+}
+
+#principal article img {
+    float: left; /* Element flottant contre lequel on peut venir se poser */
+    margin-right: 10px;
+}
+
+#principal article p {
+    padding-top: 16px;
+    padding-left: 10px;
+}
+
+#titre{
+    font-size: xx-large;
+    color: cadetblue;
+    margin-top:25px; /* Marge intérieure supérieure */  
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.question{
+    font-size: x-large;
+    color: steelblue;
+}
+
+.reponse{
+    color:gray;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0px;
+    height: 35px;
+    width: 100%;
+    font-family: "Quarthin";
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    background-color: black;
+    margin-top: 100px;
+}
+
+@media screen  and (max-width:576px){
+    body{
+        font-size: large;
+    }
+    
+    header, section{
+        width: auto;
+    }
+    
+    header img {
+        width: 100%; /* Bannière sur toute la largeur */
+        background-color: black; /* Extension artificielle noire */
+        padding-bottom: 15px; /* du bas de l'image sur 15 pixels*/
+    }
+    
+    nav{
+        position: relative;
+        top: 7px;
+        left: 7px;
+        z-index: 1; /* La barre de navigation devra être au 1e plan*/
+    }
+    
+    nav ul { /* Notre barre est à la verticale*/
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        position: absolute;
+        margin: -39px 0 0 -60px;
+        padding: 50px 10px 10px 60px;
+        background: black;
+        list-style-type: none;
+        transform: translate(-100%, 0); /* Translation du menu vers la gauche */
+        transition: transform 0.5s ease;
+    }
+    
+    nav ul li {
+        display: list-items;
+        padding: 10px 0;
+        width: 100%;
+    }
+    
+    nav input { /* Checkbox rendue transparente (opacity) et au premier plan (z-index)*/
+        display: block;
+        position: absolute;
+        opacity: 0;
+        z-index: 2;
+    }
+    
+    nav span { /* Affichage du hamburger*/
+        display: block;
+        width: 30px;
+        height:5px;
+        margin-bottom: 5px;
+        position: relative;
+        background: black;
+        border-radius: 3px;
+        z-index: 1;
+        transition: transform 0.5s ease, background 0.5s ease;
+    }
+    
+    nav input:checked ~ span {
+        background: white; /* Chgt couleur hamburger car chgt couleur background*/
+    }
+    
+    nav input:checked ~ span:nth-child(2){ /* Transformation de la première tranche*/
+        transform: rotate(45deg) translate(7px, 5px);
+    }
+    
+    nav input:checked ~ span:nth-child(4){
+        transform: rotate(-45deg) translate(10px, -6px);
+    }
+    
+    nav input:checked ~ span:nth-child(3){ /* On fait disparaître la tranche du milieu en la rendant transparente*/
+        opacity:0;
+    }
+    
+    nav input:checked ~ ul {
+        transform: none;
+    }
+    
+    #principal article img{
+        display: none;
+    }
+
+
+liste { background-size: contain; } /* Redimentionnement de l'image pour que l'image soit entièrement visible*/
+    
+    
+footer {display: none;} /*On n'affiche pas le footer*/
+
+
+}
